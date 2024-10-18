@@ -33,7 +33,7 @@ class productController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string|max:255',
-            'age' => 'nullable|numeric',
+            'age' => 'nullable|numeric|digits:2',
             'gender' => 'required|string|max:255',
            
            
@@ -70,5 +70,14 @@ class productController extends Controller
 
     return redirect()->route('product.index')->with('success', 'Product updated successfully');
 }
+
+public function destroy(Product $product)
+    {
+        // Delete the photo if exists
+      
+
+        $product->delete();
+        return redirect()->route('product.index')->with('success', 'Product deleted successfully');
+    }
 
 }

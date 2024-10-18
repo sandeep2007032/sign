@@ -103,7 +103,7 @@
 
             <div class="form-group">
                 <label for="phone">Mob_ num:</label>
-                <input type="number" name="phone" id="phone">{{ old('phone') }}</input>
+                <input type="number" name="phone" id="phone"></input>
             </div>
 
           
